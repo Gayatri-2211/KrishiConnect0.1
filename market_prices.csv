@@ -1,0 +1,481 @@
+Date,Product,State,Price
+2023-01-01,Apple,Maharashtra,106.75
+2023-01-01,Apple,Punjab,29.94
+2023-01-01,Apple,Uttar Pradesh,74.95
+2023-01-01,Apple,Karnataka,139.5
+2023-01-01,Banana,Maharashtra,121.55
+2023-01-01,Banana,Punjab,133.52
+2023-01-01,Banana,Uttar Pradesh,107.35
+2023-01-01,Banana,Karnataka,20.47
+2023-01-01,Tomato,Maharashtra,55.19
+2023-01-01,Tomato,Punjab,129.2
+2023-01-01,Tomato,Uttar Pradesh,93.15
+2023-01-01,Tomato,Karnataka,20.28
+2023-01-01,Potato,Maharashtra,132.57
+2023-01-01,Potato,Punjab,109.06
+2023-01-01,Potato,Uttar Pradesh,41.95
+2023-01-01,Potato,Karnataka,20.61
+2023-01-02,Apple,Maharashtra,131.39
+2023-01-02,Apple,Punjab,32.3
+2023-01-02,Apple,Uttar Pradesh,113.16
+2023-01-02,Apple,Karnataka,38.54
+2023-01-02,Banana,Maharashtra,103.34
+2023-01-02,Banana,Punjab,53.93
+2023-01-02,Banana,Uttar Pradesh,47.05
+2023-01-02,Banana,Karnataka,136.36
+2023-01-02,Tomato,Maharashtra,75.15
+2023-01-02,Tomato,Punjab,22.5
+2023-01-02,Tomato,Uttar Pradesh,21.61
+2023-01-02,Tomato,Karnataka,59.17
+2023-01-02,Potato,Maharashtra,72.51
+2023-01-02,Potato,Punjab,77.36
+2023-01-02,Potato,Uttar Pradesh,141.52
+2023-01-02,Potato,Karnataka,82.53
+2023-01-03,Apple,Maharashtra,122.89
+2023-01-03,Apple,Punjab,40.08
+2023-01-03,Apple,Uttar Pradesh,20.98
+2023-01-03,Apple,Karnataka,46.94
+2023-01-03,Banana,Maharashtra,28.65
+2023-01-03,Banana,Punjab,128.3
+2023-01-03,Banana,Uttar Pradesh,142.58
+2023-01-03,Banana,Karnataka,111.27
+2023-01-03,Tomato,Maharashtra,131.1
+2023-01-03,Tomato,Punjab,82.47
+2023-01-03,Tomato,Uttar Pradesh,102.59
+2023-01-03,Tomato,Karnataka,51.08
+2023-01-03,Potato,Maharashtra,137.94
+2023-01-03,Potato,Punjab,98.68
+2023-01-03,Potato,Uttar Pradesh,128.53
+2023-01-03,Potato,Karnataka,64.0
+2023-01-04,Apple,Maharashtra,116.42
+2023-01-04,Apple,Punjab,98.38
+2023-01-04,Apple,Uttar Pradesh,123.49
+2023-01-04,Apple,Karnataka,116.16
+2023-01-04,Banana,Maharashtra,26.71
+2023-01-04,Banana,Punjab,76.95
+2023-01-04,Banana,Uttar Pradesh,80.7
+2023-01-04,Banana,Karnataka,96.98
+2023-01-04,Tomato,Maharashtra,149.39
+2023-01-04,Tomato,Punjab,21.46
+2023-01-04,Tomato,Uttar Pradesh,37.79
+2023-01-04,Tomato,Karnataka,38.06
+2023-01-04,Potato,Maharashtra,79.9
+2023-01-04,Potato,Punjab,71.6
+2023-01-04,Potato,Uttar Pradesh,60.96
+2023-01-04,Potato,Karnataka,148.1
+2023-01-05,Apple,Maharashtra,78.05
+2023-01-05,Apple,Punjab,59.08
+2023-01-05,Apple,Uttar Pradesh,50.03
+2023-01-05,Apple,Karnataka,90.39
+2023-01-05,Banana,Maharashtra,76.11
+2023-01-05,Banana,Punjab,121.27
+2023-01-05,Banana,Uttar Pradesh,21.04
+2023-01-05,Banana,Karnataka,106.14
+2023-01-05,Tomato,Maharashtra,53.78
+2023-01-05,Tomato,Punjab,137.27
+2023-01-05,Tomato,Uttar Pradesh,39.81
+2023-01-05,Tomato,Karnataka,72.47
+2023-01-05,Potato,Maharashtra,38.58
+2023-01-05,Potato,Punjab,139.52
+2023-01-05,Potato,Uttar Pradesh,113.79
+2023-01-05,Potato,Karnataka,108.21
+2023-01-06,Apple,Maharashtra,85.18
+2023-01-06,Apple,Punjab,102.16
+2023-01-06,Apple,Uttar Pradesh,25.01
+2023-01-06,Apple,Karnataka,127.6
+2023-01-06,Banana,Maharashtra,131.16
+2023-01-06,Banana,Punjab,23.82
+2023-01-06,Banana,Uttar Pradesh,122.14
+2023-01-06,Banana,Karnataka,108.51
+2023-01-06,Tomato,Maharashtra,140.27
+2023-01-06,Tomato,Punjab,48.44
+2023-01-06,Tomato,Uttar Pradesh,31.02
+2023-01-06,Tomato,Karnataka,90.21
+2023-01-06,Potato,Maharashtra,23.77
+2023-01-06,Potato,Punjab,133.71
+2023-01-06,Potato,Uttar Pradesh,27.76
+2023-01-06,Potato,Karnataka,94.02
+2023-01-07,Apple,Maharashtra,50.16
+2023-01-07,Apple,Punjab,28.25
+2023-01-07,Apple,Uttar Pradesh,91.47
+2023-01-07,Apple,Karnataka,34.74
+2023-01-07,Banana,Maharashtra,143.98
+2023-01-07,Banana,Punjab,31.5
+2023-01-07,Banana,Uttar Pradesh,37.63
+2023-01-07,Banana,Karnataka,54.47
+2023-01-07,Tomato,Maharashtra,125.25
+2023-01-07,Tomato,Punjab,144.6
+2023-01-07,Tomato,Uttar Pradesh,105.67
+2023-01-07,Tomato,Karnataka,64.67
+2023-01-07,Potato,Maharashtra,65.64
+2023-01-07,Potato,Punjab,83.17
+2023-01-07,Potato,Uttar Pradesh,103.96
+2023-01-07,Potato,Karnataka,88.73
+2023-01-08,Apple,Maharashtra,40.7
+2023-01-08,Apple,Punjab,73.15
+2023-01-08,Apple,Uttar Pradesh,105.56
+2023-01-08,Apple,Karnataka,38.63
+2023-01-08,Banana,Maharashtra,149.85
+2023-01-08,Banana,Punjab,45.99
+2023-01-08,Banana,Uttar Pradesh,134.08
+2023-01-08,Banana,Karnataka,142.79
+2023-01-08,Tomato,Maharashtra,53.09
+2023-01-08,Tomato,Punjab,145.8
+2023-01-08,Tomato,Uttar Pradesh,100.04
+2023-01-08,Tomato,Karnataka,59.49
+2023-01-08,Potato,Maharashtra,75.85
+2023-01-08,Potato,Punjab,144.16
+2023-01-08,Potato,Uttar Pradesh,32.62
+2023-01-08,Potato,Karnataka,145.59
+2023-01-09,Apple,Maharashtra,20.42
+2023-01-09,Apple,Punjab,148.18
+2023-01-09,Apple,Uttar Pradesh,102.29
+2023-01-09,Apple,Karnataka,26.78
+2023-01-09,Banana,Maharashtra,66.47
+2023-01-09,Banana,Punjab,149.06
+2023-01-09,Banana,Uttar Pradesh,132.41
+2023-01-09,Banana,Karnataka,23.17
+2023-01-09,Tomato,Maharashtra,80.97
+2023-01-09,Tomato,Punjab,85.09
+2023-01-09,Tomato,Uttar Pradesh,142.44
+2023-01-09,Tomato,Karnataka,139.34
+2023-01-09,Potato,Maharashtra,37.38
+2023-01-09,Potato,Punjab,50.35
+2023-01-09,Potato,Uttar Pradesh,98.03
+2023-01-09,Potato,Karnataka,87.51
+2023-01-10,Apple,Maharashtra,21.41
+2023-01-10,Apple,Punjab,124.25
+2023-01-10,Apple,Uttar Pradesh,74.57
+2023-01-10,Apple,Karnataka,42.46
+2023-01-10,Banana,Maharashtra,72.46
+2023-01-10,Banana,Punjab,34.13
+2023-01-10,Banana,Uttar Pradesh,118.18
+2023-01-10,Banana,Karnataka,118.12
+2023-01-10,Tomato,Maharashtra,141.92
+2023-01-10,Tomato,Punjab,44.86
+2023-01-10,Tomato,Uttar Pradesh,147.01
+2023-01-10,Tomato,Karnataka,120.42
+2023-01-10,Potato,Maharashtra,98.96
+2023-01-10,Potato,Punjab,51.3
+2023-01-10,Potato,Uttar Pradesh,65.4
+2023-01-10,Potato,Karnataka,138.36
+2023-01-11,Apple,Maharashtra,106.26
+2023-01-11,Apple,Punjab,85.5
+2023-01-11,Apple,Uttar Pradesh,53.98
+2023-01-11,Apple,Karnataka,132.1
+2023-01-11,Banana,Maharashtra,57.83
+2023-01-11,Banana,Punjab,70.33
+2023-01-11,Banana,Uttar Pradesh,21.39
+2023-01-11,Banana,Karnataka,99.22
+2023-01-11,Tomato,Maharashtra,146.17
+2023-01-11,Tomato,Punjab,92.0
+2023-01-11,Tomato,Uttar Pradesh,54.47
+2023-01-11,Tomato,Karnataka,65.97
+2023-01-11,Potato,Maharashtra,43.72
+2023-01-11,Potato,Punjab,71.53
+2023-01-11,Potato,Uttar Pradesh,95.16
+2023-01-11,Potato,Karnataka,69.64
+2023-01-12,Apple,Maharashtra,71.7
+2023-01-12,Apple,Punjab,30.47
+2023-01-12,Apple,Uttar Pradesh,131.99
+2023-01-12,Apple,Karnataka,90.81
+2023-01-12,Banana,Maharashtra,65.52
+2023-01-12,Banana,Punjab,82.76
+2023-01-12,Banana,Uttar Pradesh,63.2
+2023-01-12,Banana,Karnataka,118.87
+2023-01-12,Tomato,Maharashtra,74.91
+2023-01-12,Tomato,Punjab,94.14
+2023-01-12,Tomato,Uttar Pradesh,109.33
+2023-01-12,Tomato,Karnataka,137.89
+2023-01-12,Potato,Maharashtra,118.33
+2023-01-12,Potato,Punjab,141.02
+2023-01-12,Potato,Uttar Pradesh,29.46
+2023-01-12,Potato,Karnataka,77.83
+2023-01-13,Apple,Maharashtra,148.09
+2023-01-13,Apple,Punjab,140.22
+2023-01-13,Apple,Uttar Pradesh,34.16
+2023-01-13,Apple,Karnataka,119.94
+2023-01-13,Banana,Maharashtra,126.47
+2023-01-13,Banana,Punjab,20.77
+2023-01-13,Banana,Uttar Pradesh,107.1
+2023-01-13,Banana,Karnataka,132.39
+2023-01-13,Tomato,Maharashtra,81.47
+2023-01-13,Tomato,Punjab,113.53
+2023-01-13,Tomato,Uttar Pradesh,51.79
+2023-01-13,Tomato,Karnataka,120.82
+2023-01-13,Potato,Maharashtra,104.93
+2023-01-13,Potato,Punjab,85.26
+2023-01-13,Potato,Uttar Pradesh,58.68
+2023-01-13,Potato,Karnataka,84.47
+2023-01-14,Apple,Maharashtra,35.0
+2023-01-14,Apple,Punjab,72.57
+2023-01-14,Apple,Uttar Pradesh,91.57
+2023-01-14,Apple,Karnataka,68.72
+2023-01-14,Banana,Maharashtra,76.15
+2023-01-14,Banana,Punjab,89.03
+2023-01-14,Banana,Uttar Pradesh,37.91
+2023-01-14,Banana,Karnataka,135.98
+2023-01-14,Tomato,Maharashtra,110.13
+2023-01-14,Tomato,Punjab,144.97
+2023-01-14,Tomato,Uttar Pradesh,105.38
+2023-01-14,Tomato,Karnataka,40.84
+2023-01-14,Potato,Maharashtra,149.89
+2023-01-14,Potato,Punjab,146.13
+2023-01-14,Potato,Uttar Pradesh,50.14
+2023-01-14,Potato,Karnataka,91.18
+2023-01-15,Apple,Maharashtra,53.42
+2023-01-15,Apple,Punjab,92.74
+2023-01-15,Apple,Uttar Pradesh,123.49
+2023-01-15,Apple,Karnataka,141.33
+2023-01-15,Banana,Maharashtra,121.55
+2023-01-15,Banana,Punjab,144.49
+2023-01-15,Banana,Uttar Pradesh,148.87
+2023-01-15,Banana,Karnataka,122.12
+2023-01-15,Tomato,Maharashtra,77.71
+2023-01-15,Tomato,Punjab,104.62
+2023-01-15,Tomato,Uttar Pradesh,141.64
+2023-01-15,Tomato,Karnataka,66.7
+2023-01-15,Potato,Maharashtra,35.92
+2023-01-15,Potato,Punjab,40.6
+2023-01-15,Potato,Uttar Pradesh,132.99
+2023-01-15,Potato,Karnataka,61.48
+2023-01-16,Apple,Maharashtra,49.36
+2023-01-16,Apple,Punjab,124.54
+2023-01-16,Apple,Uttar Pradesh,30.34
+2023-01-16,Apple,Karnataka,129.71
+2023-01-16,Banana,Maharashtra,141.94
+2023-01-16,Banana,Punjab,50.64
+2023-01-16,Banana,Uttar Pradesh,56.66
+2023-01-16,Banana,Karnataka,48.0
+2023-01-16,Tomato,Maharashtra,118.01
+2023-01-16,Tomato,Punjab,87.51
+2023-01-16,Tomato,Uttar Pradesh,110.64
+2023-01-16,Tomato,Karnataka,142.88
+2023-01-16,Potato,Maharashtra,103.81
+2023-01-16,Potato,Punjab,84.06
+2023-01-16,Potato,Uttar Pradesh,90.93
+2023-01-16,Potato,Karnataka,74.95
+2023-01-17,Apple,Maharashtra,144.72
+2023-01-17,Apple,Punjab,73.43
+2023-01-17,Apple,Uttar Pradesh,103.23
+2023-01-17,Apple,Karnataka,64.67
+2023-01-17,Banana,Maharashtra,91.94
+2023-01-17,Banana,Punjab,88.2
+2023-01-17,Banana,Uttar Pradesh,87.58
+2023-01-17,Banana,Karnataka,21.27
+2023-01-17,Tomato,Maharashtra,73.18
+2023-01-17,Tomato,Punjab,45.43
+2023-01-17,Tomato,Uttar Pradesh,69.75
+2023-01-17,Tomato,Karnataka,148.97
+2023-01-17,Potato,Maharashtra,99.69
+2023-01-17,Potato,Punjab,99.41
+2023-01-17,Potato,Uttar Pradesh,27.27
+2023-01-17,Potato,Karnataka,142.44
+2023-01-18,Apple,Maharashtra,108.61
+2023-01-18,Apple,Punjab,149.37
+2023-01-18,Apple,Uttar Pradesh,118.44
+2023-01-18,Apple,Karnataka,120.23
+2023-01-18,Banana,Maharashtra,41.72
+2023-01-18,Banana,Punjab,21.4
+2023-01-18,Banana,Uttar Pradesh,62.13
+2023-01-18,Banana,Karnataka,100.34
+2023-01-18,Tomato,Maharashtra,85.6
+2023-01-18,Tomato,Punjab,142.47
+2023-01-18,Tomato,Uttar Pradesh,86.96
+2023-01-18,Tomato,Karnataka,47.14
+2023-01-18,Potato,Maharashtra,23.09
+2023-01-18,Potato,Punjab,133.71
+2023-01-18,Potato,Uttar Pradesh,86.22
+2023-01-18,Potato,Karnataka,111.19
+2023-01-19,Apple,Maharashtra,142.1
+2023-01-19,Apple,Punjab,99.36
+2023-01-19,Apple,Uttar Pradesh,93.41
+2023-01-19,Apple,Karnataka,147.71
+2023-01-19,Banana,Maharashtra,27.68
+2023-01-19,Banana,Punjab,122.82
+2023-01-19,Banana,Uttar Pradesh,86.8
+2023-01-19,Banana,Karnataka,92.04
+2023-01-19,Tomato,Maharashtra,30.62
+2023-01-19,Tomato,Punjab,38.99
+2023-01-19,Tomato,Uttar Pradesh,97.74
+2023-01-19,Tomato,Karnataka,135.35
+2023-01-19,Potato,Maharashtra,37.81
+2023-01-19,Potato,Punjab,113.54
+2023-01-19,Potato,Uttar Pradesh,47.84
+2023-01-19,Potato,Karnataka,24.14
+2023-01-20,Apple,Maharashtra,89.78
+2023-01-20,Apple,Punjab,143.65
+2023-01-20,Apple,Uttar Pradesh,27.98
+2023-01-20,Apple,Karnataka,137.87
+2023-01-20,Banana,Maharashtra,42.42
+2023-01-20,Banana,Punjab,148.75
+2023-01-20,Banana,Uttar Pradesh,47.11
+2023-01-20,Banana,Karnataka,86.72
+2023-01-20,Tomato,Maharashtra,118.16
+2023-01-20,Tomato,Punjab,104.13
+2023-01-20,Tomato,Uttar Pradesh,65.27
+2023-01-20,Tomato,Karnataka,141.58
+2023-01-20,Potato,Maharashtra,61.74
+2023-01-20,Potato,Punjab,102.34
+2023-01-20,Potato,Uttar Pradesh,134.6
+2023-01-20,Potato,Karnataka,135.44
+2023-01-21,Apple,Maharashtra,45.25
+2023-01-21,Apple,Punjab,85.67
+2023-01-21,Apple,Uttar Pradesh,84.42
+2023-01-21,Apple,Karnataka,92.62
+2023-01-21,Banana,Maharashtra,46.65
+2023-01-21,Banana,Punjab,86.73
+2023-01-21,Banana,Uttar Pradesh,55.25
+2023-01-21,Banana,Karnataka,142.41
+2023-01-21,Tomato,Maharashtra,78.26
+2023-01-21,Tomato,Punjab,30.22
+2023-01-21,Tomato,Uttar Pradesh,47.73
+2023-01-21,Tomato,Karnataka,83.33
+2023-01-21,Potato,Maharashtra,63.82
+2023-01-21,Potato,Punjab,33.08
+2023-01-21,Potato,Uttar Pradesh,36.01
+2023-01-21,Potato,Karnataka,94.2
+2023-01-22,Apple,Maharashtra,127.39
+2023-01-22,Apple,Punjab,73.44
+2023-01-22,Apple,Uttar Pradesh,26.53
+2023-01-22,Apple,Karnataka,125.14
+2023-01-22,Banana,Maharashtra,103.42
+2023-01-22,Banana,Punjab,91.57
+2023-01-22,Banana,Uttar Pradesh,111.54
+2023-01-22,Banana,Karnataka,39.17
+2023-01-22,Tomato,Maharashtra,86.39
+2023-01-22,Tomato,Punjab,134.23
+2023-01-22,Tomato,Uttar Pradesh,131.53
+2023-01-22,Tomato,Karnataka,82.96
+2023-01-22,Potato,Maharashtra,21.91
+2023-01-22,Potato,Punjab,102.68
+2023-01-22,Potato,Uttar Pradesh,40.98
+2023-01-22,Potato,Karnataka,130.53
+2023-01-23,Apple,Maharashtra,76.45
+2023-01-23,Apple,Punjab,32.34
+2023-01-23,Apple,Uttar Pradesh,64.11
+2023-01-23,Apple,Karnataka,125.95
+2023-01-23,Banana,Maharashtra,100.08
+2023-01-23,Banana,Punjab,26.28
+2023-01-23,Banana,Uttar Pradesh,69.54
+2023-01-23,Banana,Karnataka,126.48
+2023-01-23,Tomato,Maharashtra,52.03
+2023-01-23,Tomato,Punjab,82.04
+2023-01-23,Tomato,Uttar Pradesh,129.07
+2023-01-23,Tomato,Karnataka,86.05
+2023-01-23,Potato,Maharashtra,118.93
+2023-01-23,Potato,Punjab,134.62
+2023-01-23,Potato,Uttar Pradesh,92.21
+2023-01-23,Potato,Karnataka,36.52
+2023-01-24,Apple,Maharashtra,44.29
+2023-01-24,Apple,Punjab,123.77
+2023-01-24,Apple,Uttar Pradesh,137.11
+2023-01-24,Apple,Karnataka,29.44
+2023-01-24,Banana,Maharashtra,72.28
+2023-01-24,Banana,Punjab,62.57
+2023-01-24,Banana,Uttar Pradesh,36.8
+2023-01-24,Banana,Karnataka,142.43
+2023-01-24,Tomato,Maharashtra,88.54
+2023-01-24,Tomato,Punjab,147.85
+2023-01-24,Tomato,Uttar Pradesh,58.18
+2023-01-24,Tomato,Karnataka,120.16
+2023-01-24,Potato,Maharashtra,36.29
+2023-01-24,Potato,Punjab,109.83
+2023-01-24,Potato,Uttar Pradesh,77.52
+2023-01-24,Potato,Karnataka,55.26
+2023-01-25,Apple,Maharashtra,140.17
+2023-01-25,Apple,Punjab,129.94
+2023-01-25,Apple,Uttar Pradesh,114.97
+2023-01-25,Apple,Karnataka,49.97
+2023-01-25,Banana,Maharashtra,77.98
+2023-01-25,Banana,Punjab,37.76
+2023-01-25,Banana,Uttar Pradesh,74.35
+2023-01-25,Banana,Karnataka,94.04
+2023-01-25,Tomato,Maharashtra,100.66
+2023-01-25,Tomato,Punjab,64.13
+2023-01-25,Tomato,Uttar Pradesh,109.4
+2023-01-25,Tomato,Karnataka,123.36
+2023-01-25,Potato,Maharashtra,20.84
+2023-01-25,Potato,Punjab,109.27
+2023-01-25,Potato,Uttar Pradesh,143.24
+2023-01-25,Potato,Karnataka,137.01
+2023-01-26,Apple,Maharashtra,74.51
+2023-01-26,Apple,Punjab,41.47
+2023-01-26,Apple,Uttar Pradesh,92.78
+2023-01-26,Apple,Karnataka,101.08
+2023-01-26,Banana,Maharashtra,130.72
+2023-01-26,Banana,Punjab,128.97
+2023-01-26,Banana,Uttar Pradesh,73.57
+2023-01-26,Banana,Karnataka,38.19
+2023-01-26,Tomato,Maharashtra,57.31
+2023-01-26,Tomato,Punjab,72.93
+2023-01-26,Tomato,Uttar Pradesh,119.91
+2023-01-26,Tomato,Karnataka,103.59
+2023-01-26,Potato,Maharashtra,137.58
+2023-01-26,Potato,Punjab,22.41
+2023-01-26,Potato,Uttar Pradesh,38.77
+2023-01-26,Potato,Karnataka,43.58
+2023-01-27,Apple,Maharashtra,79.63
+2023-01-27,Apple,Punjab,39.58
+2023-01-27,Apple,Uttar Pradesh,68.08
+2023-01-27,Apple,Karnataka,54.62
+2023-01-27,Banana,Maharashtra,29.88
+2023-01-27,Banana,Punjab,61.21
+2023-01-27,Banana,Uttar Pradesh,114.91
+2023-01-27,Banana,Karnataka,121.74
+2023-01-27,Tomato,Maharashtra,29.45
+2023-01-27,Tomato,Punjab,79.61
+2023-01-27,Tomato,Uttar Pradesh,25.27
+2023-01-27,Tomato,Karnataka,66.1
+2023-01-27,Potato,Maharashtra,103.4
+2023-01-27,Potato,Punjab,39.06
+2023-01-27,Potato,Uttar Pradesh,33.41
+2023-01-27,Potato,Karnataka,22.57
+2023-01-28,Apple,Maharashtra,144.69
+2023-01-28,Apple,Punjab,26.45
+2023-01-28,Apple,Uttar Pradesh,100.28
+2023-01-28,Apple,Karnataka,63.51
+2023-01-28,Banana,Maharashtra,101.54
+2023-01-28,Banana,Punjab,102.21
+2023-01-28,Banana,Uttar Pradesh,58.08
+2023-01-28,Banana,Karnataka,146.92
+2023-01-28,Tomato,Maharashtra,120.6
+2023-01-28,Tomato,Punjab,92.01
+2023-01-28,Tomato,Uttar Pradesh,69.6
+2023-01-28,Tomato,Karnataka,52.3
+2023-01-28,Potato,Maharashtra,36.11
+2023-01-28,Potato,Punjab,114.21
+2023-01-28,Potato,Uttar Pradesh,44.81
+2023-01-28,Potato,Karnataka,118.8
+2023-01-29,Apple,Maharashtra,56.71
+2023-01-29,Apple,Punjab,118.59
+2023-01-29,Apple,Uttar Pradesh,50.9
+2023-01-29,Apple,Karnataka,77.52
+2023-01-29,Banana,Maharashtra,99.86
+2023-01-29,Banana,Punjab,64.05
+2023-01-29,Banana,Uttar Pradesh,47.7
+2023-01-29,Banana,Karnataka,53.45
+2023-01-29,Tomato,Maharashtra,92.11
+2023-01-29,Tomato,Punjab,131.05
+2023-01-29,Tomato,Uttar Pradesh,100.84
+2023-01-29,Tomato,Karnataka,146.2
+2023-01-29,Potato,Maharashtra,56.89
+2023-01-29,Potato,Punjab,141.04
+2023-01-29,Potato,Uttar Pradesh,39.27
+2023-01-29,Potato,Karnataka,40.13
+2023-01-30,Apple,Maharashtra,87.77
+2023-01-30,Apple,Punjab,100.36
+2023-01-30,Apple,Uttar Pradesh,56.68
+2023-01-30,Apple,Karnataka,141.09
+2023-01-30,Banana,Maharashtra,72.0
+2023-01-30,Banana,Punjab,109.1
+2023-01-30,Banana,Uttar Pradesh,146.7
+2023-01-30,Banana,Karnataka,110.87
+2023-01-30,Tomato,Maharashtra,137.26
+2023-01-30,Tomato,Punjab,98.29
+2023-01-30,Tomato,Uttar Pradesh,60.45
+2023-01-30,Tomato,Karnataka,123.74
+2023-01-30,Potato,Maharashtra,68.33
+2023-01-30,Potato,Punjab,60.21
+2023-01-30,Potato,Uttar Pradesh,51.36
+2023-01-30,Potato,Karnataka,113.93

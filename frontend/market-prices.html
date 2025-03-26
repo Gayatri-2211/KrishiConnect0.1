@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Prices & AI Prediction</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f7ec; text-align: center; padding: 20px; }
+        h2 { color: #4c8a2b; }
+        select, button { margin: 10px; padding: 10px; font-size: 16px; border-radius: 5px; }
+        button { background-color: #4c8a2b; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #3a6d21; }
+        canvas { 
+        width: 1200px !important; /* Increased width */
+        height: 600px !important; /* Increased height */
+        display: block;
+        margin: auto;
+    }
+        canvas { max-width: 1000px; max-height: 500px; margin: auto; } /* Increased graph size */
+        .loading { display: none; font-weight: bold; color: blue; }
+        .error { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h2>Market Prices & AI Prediction</h2>
+
+    <label for="product">Select Product:</label>
+    <select id="product"></select>
+
+    <label for="state">Select State:</label>
+    <select id="state"></select>
+
+    <button onclick="fetchPriceData()">Show Trends</button>
+    <button onclick="predictFuturePrice()">Predict Future Price</button>
+
+    <p class="loading" id="loadingMessage">Loading data, please wait...</p>
+    <p class="error" id="errorMessage"></p>
+
+    <canvas id="priceChart"></canvas>
+    <p id="predictionResult"></p>
+    <p id="unitDisplay"><b>Unit:</b> Loading...</p>
+
+    <script>
+        let priceChart;
+        let apiUrl = "http://127.0.0.1:5000";
+
+        async function fetchOptions() {
+            try {
+                document.getElementById("loadingMessage").style.display = "block";
+                let response = await fetch(`${apiUrl}/fetch-options`);
+                let data = await response.json();
+                document.getElementById("loadingMessage").style.display = "none";
+
+                let stateSelect = document.getElementById("state");
+                let productSelect = document.getElementById("product");
+
+                data.states.forEach(state => {
+                    let option = document.createElement("option");
+                    option.value = state;
+                    option.textContent = state;
+                    stateSelect.appendChild(option);
+                });
+
+                data.products.forEach(product => {
+                    let option = document.createElement("option");
+                    option.value = product;
+                    option.textContent = product;
+                    productSelect.appendChild(option);
+                });
+
+            } catch (error) {
+                showError("Failed to load states/products.");
+            }
+        }
+
+        async function fetchPriceData() {
+    let product = document.getElementById("product").value;
+    let state = document.getElementById("state").value;
+    document.getElementById("errorMessage").textContent = "";
+    document.getElementById("loadingMessage").style.display = "block";
+
+    try {
+        let response = await fetch(`${apiUrl}/fetch-prices?product=${product}&state=${state}`);
+        let data = await response.json();
+        document.getElementById("loadingMessage").style.display = "none";
+
+        if (!data.prices || data.prices.length === 0) {
+            showError("No price data available.");
+            return;
+        }
+
+        let labels = data.prices.map(p => new Date(p.Date).toLocaleDateString("en-GB"));
+        let priceValues = data.prices.map(p => p.Price);
+        let unit = data.unit && data.unit !== "unit" ? data.unit : "Not Available"; // ✅ Ensure correct display
+
+        document.getElementById("unitDisplay").innerText = `Unit: ${unit}`; // ✅ Correctly show unit
+
+        if (priceChart) priceChart.destroy();
+
+        let ctx = document.getElementById("priceChart").getContext("2d");
+        priceChart = new Chart(ctx, {
+            type: "line",
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: `Price (₹ per ${unit})`,  
+                    data: priceValues,
+                    borderColor: "blue",
+                    fill: false
+                }]
+            }
+        });
+
+    } catch (error) {
+        showError("Failed to fetch price data.");
+    }
+}
+
+
+
+        async function predictFuturePrice() {
+            let product = document.getElementById("product").value;
+            let state = document.getElementById("state").value;
+
+            try {
+                let response = await fetch(`${apiUrl}/predict?product=${product}&state=${state}`);
+                let data = await response.json();
+
+                document.getElementById("predictionResult").innerText = 
+                    `Predicted Price: ₹${parseFloat(data.predicted_price).toFixed(2)} per ${data.unit}`;
+
+            } catch (error) {
+                document.getElementById("predictionResult").innerText = "Prediction failed.";
+            }
+        }
+
+        function showError(message) {
+            document.getElementById("errorMessage").textContent = message;
+        }
+
+        document.addEventListener("DOMContentLoaded", fetchOptions);
+    </script>
+</body>
+</html>

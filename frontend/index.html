@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krishi Marketplace</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ✅ Navigation Bar -->
+  <nav id="navbar">
+    <a href="index.html">Home</a>
+    <a id="buyLink" href="buy.html" style="display:none">Buy</a>
+    <a id="sellLink" href="sell.html" style="display:none">Sell</a>
+    <a id="cartLink" href="cart.html" style="display:none">Cart</a>
+    <a id="profileLink" href="profile.html">Profile</a>
+</nav>
+
+
+  <!-- ✅ Main Buttons -->
+  <div class="buttons">
+    <button id="buy-btn" onclick="location.href='buy.html'" style="display:none;">🚜 Buy</button>
+    <button id="sell-btn" onclick="location.href='sell.html'" style="display:none;">🌾 Sell</button>
+  </div>
+
+  <script>
+    const token = localStorage.getItem('token');
+    const userType = localStorage.getItem('userType');
+
+    if (token) {
+        document.getElementById('profileLink').style.display = 'inline-block';
+
+        if (userType === 'buyer') {
+            document.getElementById('buyLink').style.display = 'inline-block';
+            document.getElementById('cartLink').style.display = 'inline-block';
+        } else if (userType === 'seller') {
+            document.getElementById('sellLink').style.display = 'inline-block';
+        }
+    } else {
+        window.location.href = 'login.html';
+    }
+
+    function logout() {
+        localStorage.clear();
+        window.location.href = 'login.html';
+    }
+</script>
+</body>
+</html>

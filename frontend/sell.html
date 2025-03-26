@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Product</title>
+    <link rel="stylesheet" href="sell.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <a href="sellerHome.html"><i class="fas fa-home"></i> Home</a>
+        <a href="sell.html" class="active"><i class="fas fa-shopping-cart"></i> Sell</a>
+        <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+    </nav>
+
+    <div class="container">
+        <h2><i class="fas fa-seedling"></i> Sell Your Product</h2>
+        <form id="addProductForm" action="http://localhost:5000/api/products/add" method="POST" enctype="multipart/form-data" onsubmit="return addProduct(event)">
+            
+            <label for="name"><i class="fas fa-leaf"></i> Product Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter product name" required>
+
+            <label for="price"><i class="fas fa-tag"></i> Price</label>
+            <input type="text" id="price" name="price" placeholder="Enter price" required>
+
+            <label for="description"><i class="fas fa-info-circle"></i> Description</label>
+            <input type="text" id="description" name="description" placeholder="Enter description" required>
+
+            <label for="sellerName"><i class="fas fa-user"></i> Seller Name</label>
+            <input type="text" id="sellerName" name="sellerName" required>
+
+            <label for="contact"><i class="fas fa-phone"></i> Contact</label>
+            <input type="tel" id="contact" name="contact" placeholder="Enter contact details" required>
+
+            <label for="category"><i class="fas fa-box"></i> Category</label>
+            <select id="category" name="category" required>
+                <option value="">Select Category</option>
+                <option value="fruits">Fruits</option>
+                <option value="vegetables">Vegetables</option>
+                <option value="fertilizer">Fertilizer</option>
+                <option value="seeds">Seeds</option>
+                <option value="farming tools">Farming Tools</option>
+            </select>
+
+            <label for="quantity"><i class="fas fa-balance-scale"></i> Quantity</label>
+            <input type="text" id="quantity" name="quantity" placeholder="in kg, litre, etc." required>
+
+            <label for="manufacturedDate"><i class="fas fa-calendar"></i> Manufactured Date</label>
+            <input type="date" id="manufacturedDate" name="manufacturedDate" required>
+
+            <label for="location"><i class="fas fa-map-marker-alt"></i> Location</label>
+            <input type="text" id="location" name="location" placeholder="Enter location" required>
+
+            <label for="deliveryOptions"><i class="fas fa-truck"></i> Delivery Options</label>
+            <input type="text" id="deliveryOptions" name="deliveryOptions" placeholder="e.g., Pickup, Home Delivery">
+
+            <label for="qualityGrade"><i class="fas fa-star"></i> Quality Grade</label>
+            <select id="qualityGrade" name="qualityGrade">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+            </select>
+
+            <label for="image"><i class="fas fa-image"></i> Upload Image</label>
+            <input type="file" id="image" name="image" required>
+
+            <button type="submit" id="submitBtn"><i class="fas fa-plus-circle"></i> Add Product</button>
+        </form>
+    </div>
+
+    <script>
+        async function addProduct(event) {
+            event.preventDefault(); // Stop default form submission
+
+            const form = document.getElementById("addProductForm");
+            const submitBtn = document.getElementById("submitBtn");
+            submitBtn.disabled = true; // Disable button to prevent multiple submissions
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch("http://localhost:5000/api/products/add", {
+                    method: "POST",
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    throw new Error("Failed to add product");
+                }
+
+                alert("Product added successfully!");
+                window.location.href = "successfulproductadd.html"; // Redirect on success
+
+            } catch (error) {
+                console.error("Error:", error);
+                alert("Failed to add product. Please try again.");
+                submitBtn.disabled = false; // Re-enable button if failed
+            }
+
+            return false; // Prevent normal form submission
+        }
+    </script>
+</body>
+</html>

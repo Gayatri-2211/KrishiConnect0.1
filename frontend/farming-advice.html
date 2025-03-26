@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farming Assistance</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #A3D977, #85e384);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        nav {
+            background-color: #4caf50;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            align-items: center;
+            width: 100%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: 0;
+            z-index: 10;
+            border-bottom: 4px solid #388e3c;
+            border-radius: 0 0 12px 12px;
+        }
+
+        nav a, nav button {
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border-radius: 12px;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        nav a:hover, nav button:hover {
+            background-color: #388e3c;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .farming-advice {
+            text-align: center;
+            position: absolute;
+            top: 60px;
+            width: 100%;
+        }
+
+        .farming-advice h2 {
+            font-size: 28px;
+            color: #2e7d32;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-top: 50px;
+        }
+
+        .farming-advice h2::before {
+            content: "🌿 ";
+        }
+
+        #chatbox-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+
+        #frame {
+            width: 70%;
+            height: 500px;
+            border: 8px solid #4caf50;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            background-color: #fff;
+            transition: transform 0.3s ease;
+        }
+
+        #frame:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <a href="profile.html">Profile</a>
+  <!-- Navigation will be loaded dynamically -->
+  </nav>
+
+    <section class="farming-advice">
+        <h2>Farming Assistance Chatbot</h2>
+        <div id="chatbox-container">
+           <iframe id="frame" 
+                src="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/03/26/09/20250326095850-YNPN6OTA.json" 
+                frameborder="0">
+            </iframe>
+           
+        </div>
+    </section>
+
+    <script>
+     async function loadNavigation() {
+        localStorage.setItem("userType", userType); // Ensure this stores correct type
+
+    const navbar = document.getElementById('navbar');
+    
+    let navPage = role === 'seller' ? 'sellerHome.html' : 'buyerHome.html';
+
+    try {
+        const response = await fetch(navPage);
+        if (!response.ok) throw new Error(`Failed to load ${navPage}`);
+
+        const htmlText = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(htmlText, 'text/html');
+        const extractedNav = doc.querySelector('nav');
+        
+        if (extractedNav) {
+            navbar.innerHTML = extractedNav.innerHTML;
+        } else {
+            throw new Error("Navigation not found in " + navPage);
+        }
+    } catch (error) {
+        console.error("Error loading navigation:", error);
+        navbar.innerHTML = `<p style="color: red; font-weight: bold;">Navigation failed to load.</p>`;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', loadNavigation);
+
+    </script>
+
+</body>
+</html>

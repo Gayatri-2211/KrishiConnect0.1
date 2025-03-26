@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Products</title>
+    <link rel="stylesheet" href="buy.css">
+</head>
+<body>
+
+<!-- 🌾 Navigation Bar -->
+<nav>
+    <a href="buyerHome.html">Home</a>
+    <a href="buy.html">Buy</a>
+    <a href="orders.html"><i class="fas fa-box"></i> Your Orders</a>
+    <a href="cart.html">Cart</a>
+    <a href="profile.html">Profile</a>
+</nav>
+
+<h2>Available Products</h2>
+
+<!-- 🌾 Search Bar -->
+<div class="filter">
+    <input type="text" id="searchBar" placeholder="Search by name..." onkeyup="filterProducts()">
+    <select id="categoryFilter" onchange="filterProducts()">
+        <option value="all">All</option>
+        <option value="fruits">Fruits</option>
+        <option value="vegetables">Vegetables</option>
+        <option value="fertilizer">Fertilizer</option>
+        <option value="seeds">Seeds</option>
+        <option value="farming tools">Farming Tools</option>
+    </select>
+</div>
+
+<!-- 🌾 Product List -->
+<div id="productList"></div>
+
+<script>
+    let allProducts = [];
+
+    async function fetchProducts() {
+    try {
+        const response = await fetch('http://localhost:5000/api/products/get');
+        if (!response.ok) throw new Error("Failed to fetch data");
+        
+        allProducts = await response.json();
+        console.log("Fetched Products:", allProducts);  // Debugging
+
+        displayProducts(allProducts);
+        filterProducts(); // Ensure filtering works on load
+    } catch (error) {
+        console.error("Error fetching products:", error);
+    }
+}
+
+
+    // Display products
+    function displayProducts(products) {
+        const productList = document.getElementById('productList');
+        productList.innerHTML = '';
+
+        products.forEach(product => {
+            const productItem = document.createElement('div');
+            productItem.className = 'product-card';
+            productItem.innerHTML = `
+                <img src="${product.imageUrl}" alt="${product.name}">
+             
+
+               <h3 style="text-align: center;">${product.name.toUpperCase()} - <i>${product.category || 'N/A'}</i></h3>
+
+                <div class="product-info">
+                    <strong>Price:</strong> <span>${product.price}</span>
+                    <strong>Description:</strong> <span>${product.description}</span>
+                                       <strong>Seller Name:</strong><span> ${product.sellerName}</span>
+                    <strong>Contact:</strong> <span>${product.contact}</span>
+                                      <strong>Quality Grade:</strong><span> ${product.qualityGrade}</span>
+                      <strong>Quantity:</strong><span> ${product.quantity}</span>
+                   <strong>Manufactured Date:</strong><span> ${new Date(product.manufacturedDate).toLocaleDateString()}</span>
+
+
+                    <strong>Location:</strong> <span>${product.location || 'Not available'}</span>
+                </div>
+                <div class="button-group">
+                    <button class="buy-btn" onclick="buyProduct('${product._id}')">Buy</button>
+                    <button onclick="addToCart('${product._id}')">Add to Cart</button>
+                </div>
+            `;
+            productList.appendChild(productItem);
+        });
+    }
+    function filterProducts() {
+    const selectedCategory = document.getElementById('categoryFilter').value.toLowerCase();
+    const searchValue = document.getElementById('searchBar').value.toLowerCase();
+
+    console.log("Filtering products...");  // Debugging
+    console.log("Selected Category:", selectedCategory);
+    console.log("Search Value:", searchValue);
+    console.log("All Products:", allProducts); // Check if allProducts is loaded
+
+    const filteredProducts = allProducts.filter(product => {
+        const productCategory = product.category?.toLowerCase() || ""; // ✅ Default empty string if undefined
+        const categoryMatch = selectedCategory === 'all' || productCategory === selectedCategory;
+        const searchMatch = product.name?.toLowerCase().includes(searchValue); // ✅ Ensure name exists
+
+        return categoryMatch && searchMatch;
+    });
+
+    console.log("Filtered Products:", filteredProducts); // Debugging
+    displayProducts(filteredProducts);
+}
+
+
+
+
+    // Buy Product
+    function buyProduct(productId) {
+    const product = allProducts.find(p => p._id === productId);
+    if (product) {
+        const queryParams = new URLSearchParams({
+            id: product._id,
+            name: product.name,
+            price: product.price,
+            contact: product.contact,
+            location: product.location || 'Not available'
+        }).toString();
+        window.location.href = `payment.html?${queryParams}`;
+    }
+}
+
+    // Add to Cart
+    function addToCart(id) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        if (!cart.includes(id)) {
+            cart.push(id);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('Added to cart');
+        } else {
+            alert('Product is already in the cart');
+        }
+    }
+
+    // Load products on page load
+    document.addEventListener('DOMContentLoaded', fetchProducts);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farming Assistance</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #A3D977, #85e384);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        nav {
+            background-color: #4caf50;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            align-items: center;
+            width: 100%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: 0;
+            z-index: 10;
+            border-bottom: 4px solid #388e3c;
+            border-radius: 0 0 12px 12px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border-radius: 12px;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            background-color: #388e3c;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .farming-advice {
+            text-align: center;
+            position: absolute;
+            top: 60px;
+            width: 100%;
+        }
+
+        .farming-advice h2 {
+            font-size: 28px;
+            color: #2e7d32;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-top: 50px;
+        }
+
+        .farming-advice h2::before {
+            content: "🌿 ";
+        }
+
+        #chatbox-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <a href="profile.html">Profile</a>
+    </nav>
+
+    <section class="farming-advice">
+        <h2>Farming Assistance Chatbot</h2>
+        <div id="chatbox-container"></div>
+    </section>
+
+    <!-- Botpress Webchat Script -->
+    <script>
+        function initializeBotpress() {
+            if (!window.botpressWebChat) {
+                console.error("Botpress script failed to load.");
+                return;
+            }
+    
+            window.botpressWebChat.init({
+                botId: "YOUR_BOT_ID_HERE", // Replace with your actual Bot ID
+                host: "https://cdn.botpress.cloud/webchat/v2",
+                messagingUrl: "https://messaging.botpress.cloud",
+                botName: "Farming Assistant",
+                showBotInfoPage: false,
+                disableAnimations: false,
+                enableTranscriptDownload: true,
+                closeOnEscape: true,
+                stylesheet: "https://cdn.botpress.cloud/webchat/v2/themes/default.css",
+                theme: "prism",
+                avatarUrl: "https://your-avatar-url.com/bot-avatar.png", // Optional
+                hideWidget: false,
+            });
+        }
+    </script>
+    
+    <!-- Load Botpress script AFTER defining the function -->
+    <script src="https://cdn.botpress.cloud/webchat/v2/inject.js" onload="initializeBotpress()"></script>
+    
+</body>
+</html>

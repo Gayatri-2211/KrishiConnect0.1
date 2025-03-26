@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <nav>
+        <a href="buyerHome.html">Home</a>
+        <a href="buy.html">Buy</a>
+       
+        <a href="cart.html">Cart</a>
+        <a href="profile.html">Profile</a>
+     
+    </nav>
+
+    <h2>Your Cart</h2>
+
+    <div id="cartList"></div>
+
+    <script>
+        let allProducts = [];
+        async function fetchCartItems() {
+            const response = await fetch('http://localhost:5000/api/products/get');
+            allProducts = await response.json();
+            const cartIds = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItems = allProducts.filter(product => cartIds.includes(product._id));
+            displayCartItems(cartItems);
+        }
+        
+        function displayCartItems(products) {
+            const cartList = document.getElementById('cartList');
+            cartList.innerHTML = '';
+
+            if (products.length === 0) {
+                cartList.innerHTML = '<p>No orders.</p>';
+                return;
+            }
+
+            products.forEach(product => {
+                const cartItem = document.createElement('div');
+                cartItem.className = 'product-card';
+                cartItem.innerHTML = `
+                    <img src="${product.imageUrl}" alt="${product.name}">
+                    <h3 style="text-align: center;">${product.name.toUpperCase()} - <i>${product.category || 'N/A'}</i></h3>
+
+                   <div class="product-info">
+                    <strong>Price:</strong> <span>${product.price}</span>
+                    <strong>Description:</strong> <span>${product.description}</span>
+                                       <strong>Seller Name:</strong><span> ${product.sellerName}</span>
+                    <strong>Contact:</strong> <span>${product.contact}</span>
+                                      <strong>Quality Grade:</strong><span> ${product.qualityGrade}</span>
+                      <strong>Quantity:</strong><span> ${product.quantity}</span>
+                   <strong>Manufactured Date:</strong><span> ${new Date(product.manufacturedDate).toLocaleDateString()}</span>
+
+
+                    <strong>Location:</strong> <span>${product.location || 'Not available'}</span>
+                </div>
+                <div class="button-group">
+                    
+                      
+                        <button onclick="buyNow('${product._id}')">Buy Again</button>
+                    </div>
+                `;
+                cartList.appendChild(cartItem);
+            });
+        }
+
+        // Remove product from cart
+        function removeFromCart(id) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart = cart.filter(productId => productId !== id);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            fetchCartItems(); // Refresh cart items after removal
+            alert('Removed from cart');
+        }
+
+        // Redirect to payment page with product details
+        function buyNow(id) {
+    const product = allProducts.find(p => p._id === id);
+    if (product) {
+        const queryParams = new URLSearchParams({
+            id: product._id,
+            name: product.name,
+            price: product.price,
+            contact: product.contact,
+            location: product.location || 'Not available'
+        }).toString();
+        window.location.href = `payment.html?${queryParams}`;
+    }
+}
+
+
+        // Load cart items on page load
+        document.addEventListener('DOMContentLoaded', fetchCartItems);
+    </script>
+</body>
+</html>

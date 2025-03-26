@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <style>
+      body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(332deg, #4CAF50, #8BC34A, #6FAE3B);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .welcome-section {
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .welcome-section h1 {
+            font-size: 32px;
+            text-shadow: 2px 2px 4px #2E7D32;
+        }
+
+        .welcome-section p {
+            font-size: 18px;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            animation: fadeIn 0.5s ease;
+            position: relative;
+        }
+
+        input {
+            width: calc(100% - 20px);
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 2px solid #2E7D32;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border 0.3s;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #1B5E20;
+        }
+
+        /* 👁️ Eye Icon Styling */
+        .password-container {
+            position: relative;
+            width: calc(100% - 20px);
+            margin-bottom: 15px;
+        }
+
+        .password-container input {
+            width: 91%;
+            padding-right: 40px;
+        }
+
+        .toggle-password {
+            position: absolute;
+            top: 33%;
+            right: -17px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 20px;
+            color: #888;
+            transition: color 0.2s;
+        }
+
+        .toggle-password:hover {
+            color: #4CAF50;
+        }
+
+        button {
+            background-color: #2E7D32;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            background-color: #1B5E20;
+            transform: scale(1.05);
+        }
+        h2 {
+            color: #ffffff;
+            font-size: 28px;
+            text-shadow: 2px 2px 4px #2E7D32;
+            margin-bottom: 20px;
+            text-align: center;
+            border: 2px solid #2E7D32;
+            border-radius: 8px;
+            padding: 12px;
+            background-color: #2E7D32;
+           
+            margin: 10px auto;
+
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+
+<div class="welcome-section">
+    <h1>Welcome to KrishiCONNECT 🌱</h1>
+    <p>"Empowering Farmers, Enriching Markets"</p>
+</div>
+<h2>Signup</h2>
+<form id="signupForm">
+    <input type="text" id="name" placeholder="👤 Name" required />
+
+    <input type="email" id="email" placeholder="📧 Email" required 
+           pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" 
+           title="Enter a valid email address" />
+
+    <input type="tel" id="phone" placeholder="📞 Phone Number" 
+           pattern="[0-9]{10}" 
+           title="Enter a valid 10-digit phone number" required />
+
+    <!-- ✅ Password with Eye Icon -->
+    <div class="password-container">
+        <input type="password" id="password" placeholder="🔒 Password" required 
+               pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=!]).{8,}$"
+               title="Password must be at least 8 characters and include one uppercase letter, one lowercase letter, one number, and one special character" />
+        <span class="toggle-password" onclick="togglePassword('password')">👁️</span>
+    </div>
+
+    <div>
+        <button type="submit" id="buyerBtn">👨‍🌾 Join as Buyer</button>
+        <button type="submit" id="sellerBtn">🚜 Join as Seller</button>
+        <p style="text-align: center;">Already have an account?
+            <a href="login.html">Login in</a>
+        </p>
+        
+    </div>
+</form>
+
+<script>
+    function togglePassword(id) {
+        const passwordInput = document.getElementById(id);
+        const toggleIcon = passwordInput.nextElementSibling;
+
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            toggleIcon.textContent = "🙈"; // Hide icon
+        } else {
+            passwordInput.type = "password";
+            toggleIcon.textContent = "👁️"; // Show icon
+        }
+    }
+</script>
+
+<script src="/frontend/auth.js"></script>
+
+</body>
+</html>

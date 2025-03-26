@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+
+<div class="container">
+    <h3>Checkout Form</h3>
+    <form id="paymentForm">
+        <label for="fname">Full Name</label>
+        <input type="text" id="fname" name="name" placeholder="Enter full name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter email" required>
+
+        <label for="mobile">Mobile</label>
+        <input type="text" id="mobile" name="mobile" placeholder="Enter mobile number" required>
+
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address" placeholder="Enter address" required>
+
+        <label for="price">Price</label>
+        <input type="text" id="price" name="price" readonly>
+
+        <input type="hidden" id="productId" name="productId">
+
+        <button type="button" class="btn" onclick="processPayment()">Pay Now</button>
+    </form>
+</div>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+    // ✅ Get query params from URL
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById('productId').value = params.get('id');
+    document.getElementById('fname').value = params.get('name');
+    document.getElementById('price').value = params.get('price');
+    
+    function processPayment() {
+        const options = {
+            key: 'rzp_test_NZI4hu7hkebYxr', // Razorpay test key
+            amount: parseFloat(document.getElementById('price').value) * 100, // Convert to paise
+            currency: 'INR',
+            name: 'Agriculture Marketplace',
+            description: 'Purchase of product',
+            image: 'https://graphicsfamily.com/wp-content/uploads/edd/2021/07/Agriculture-Logo-Design-PNG.png',
+            handler: function (response) {
+                alert('Payment successful! Payment ID: ' + response.razorpay_payment_id);
+                window.location.href = 'success.html';
+            },
+            prefill: {
+                name: document.getElementById('fname').value,
+                email: document.getElementById('email').value,
+                contact: document.getElementById('mobile').value
+            },
+            theme: {
+                color: '#0e90e4'
+            }
+        };
+
+        const rzp = new Razorpay(options);
+        rzp.open();
+    }
+</script>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        padding: 20px;
+    }
+    .container {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        max-width: 400px;
+        margin: 50px auto;
+    }
+    h3 {
+        text-align: center;
+        color: #333;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    input[type="text"], input[type="email"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    .btn {
+        background-color: #4caf50;
+        color: white;
+        padding: 12px;
+        width: 100%;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    .btn:hover {
+        background-color: #45a049;
+    }
+</style>
+
+</body>
+</html>
